@@ -76,7 +76,7 @@ struct WallpaperLabView: View {
                             ? "checkmark.shield.fill"
                             : "exclamationmark.triangle.fill"
                     )
-                    .foregroundStyle(report.canInstall ? Color.green : Color.orange)
+                    .foregroundStyle(report.canInstall ? AppTheme.accent : AppTheme.secondaryAccent)
                     Spacer()
                     Text("MHA-C2")
                         .font(.caption.monospaced())

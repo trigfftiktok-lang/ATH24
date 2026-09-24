@@ -199,12 +199,12 @@ struct OnboardingView: View {
                     .padding(.horizontal, 22)
             }
             VStack(alignment: .leading, spacing: 10) {
-                versionRow(icon: "checkmark.circle.fill", title: "iOS 17", value: ExploitSupportPolicy.verifiedIOS17Range, color: .green)
-                versionRow(icon: "checkmark.circle.fill", title: "iOS 18", value: ExploitSupportPolicy.verifiedIOS18Range, color: .green)
-                versionRow(icon: "checkmark.circle.fill", title: "iOS 26", value: ExploitSupportPolicy.verifiedIOS26Range, color: .green)
+                versionRow(icon: "checkmark.circle.fill", title: "iOS 17", value: ExploitSupportPolicy.verifiedIOS17Range, color: AppTheme.accent)
+                versionRow(icon: "checkmark.circle.fill", title: "iOS 18", value: ExploitSupportPolicy.verifiedIOS18Range, color: AppTheme.accent)
+                versionRow(icon: "checkmark.circle.fill", title: "iOS 26", value: ExploitSupportPolicy.verifiedIOS26Range, color: AppTheme.accent)
                 VStack(alignment: .leading, spacing: 6) {
                     HStack(spacing: 8) {
-                        Image(systemName: "checkmark.circle.fill").foregroundStyle(.green)
+                        Image(systemName: "checkmark.circle.fill").foregroundStyle(AppTheme.accent)
                         Text("iOS 27.0").font(.subheadline.weight(.semibold))
                         Spacer()
                         Text(language.text("onboarding.beta")).font(.caption.weight(.semibold)).foregroundStyle(.secondary)
@@ -240,12 +240,12 @@ struct OnboardingView: View {
                      .fill(Color(uiColor: .secondarySystemBackground))
                      .overlay(
                          RoundedRectangle(cornerRadius: 10, style: .continuous)
-                             .stroke(Color.orange.opacity(0.4), lineWidth: 1)
+                             .stroke(AppTheme.secondaryAccent.opacity(0.4), lineWidth: 1)
                      )
                      .frame(width: 72, height: 72)
                  Image(systemName: "exclamationmark.shield.fill")
                      .font(.system(size: 30, weight: .medium))
-                    .foregroundStyle(.orange)
+                    .foregroundStyle(.secondaryAccent)
             }
             VStack(spacing: 8) {
                 Text(language.text("onboarding.install_title"))
@@ -258,9 +258,9 @@ struct OnboardingView: View {
                     .padding(.horizontal, 22)
             }
             VStack(alignment: .leading, spacing: 10) {
-                installBullet(icon: "checkmark.seal.fill", text: language.text("onboarding.install_ok"), color: .green)
+                installBullet(icon: "checkmark.seal.fill", text: language.text("onboarding.install_ok"), color: AppTheme.accent)
                 installBullet(icon: "xmark.octagon.fill", text: language.text("onboarding.install_bad"), color: AppTheme.accent)
-                installBullet(icon: "exclamationmark.triangle.fill", text: language.text("onboarding.install_jailbreak"), color: .orange)
+                installBullet(icon: "exclamationmark.triangle.fill", text: language.text("onboarding.install_jailbreak"), color: .secondaryAccent)
             }
             .padding(14)
              .background(Color(uiColor: .secondarySystemBackground), in: RoundedRectangle(cornerRadius: 10, style: .continuous))

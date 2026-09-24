@@ -57,11 +57,11 @@ struct ContentView: View {
     private var brandHeader: some View {
         HStack(spacing: 14) {
             VStack(alignment: .leading, spacing: 3) {
-                Text("ATH EXTERNAL")
+                Text("SPIDER CHEAT")
                     .font(.system(size: 25, weight: .black, design: .rounded))
                     .tracking(3)
                     .foregroundStyle(.white)
-                Text("PATCH CONTROL CENTER")
+                Text("SPIDER CHEAT PATCH CONTROL")
                     .font(.system(size: 10, weight: .bold, design: .rounded))
                     .tracking(1.7)
                     .foregroundStyle(AppTheme.accent)
@@ -89,7 +89,7 @@ struct ContentView: View {
             panelTitle("DEVICE STATUS", icon: "shield.lefthalf.filled")
             statusRow(icon: "apple.logo", title: "iOS", value: AppInfo.osVersion, color: AppTheme.secondaryAccent)
             statusRow(icon: "iphone", title: "Device", value: AppInfo.displayMachineName, color: AppTheme.secondaryAccent)
-            statusRow(icon: "checkmark.seal.fill", title: "Support", value: appState.isSupported ? "SUPPORTED" : "UNSUPPORTED", color: appState.isSupported ? .green : AppTheme.accent)
+            statusRow(icon: "checkmark.seal.fill", title: "Support", value: appState.isSupported ? "SUPPORTED" : "UNSUPPORTED", color: appState.isSupported ? AppTheme.accent : AppTheme.accent)
         }
         .padding(16)
         .background(Color.black.opacity(0.42), in: RoundedRectangle(cornerRadius: 24, style: .continuous))
@@ -117,7 +117,7 @@ struct ContentView: View {
             }
 
             HStack(spacing: 8) {
-                Circle().fill(patchMessage.localizedCaseInsensitiveContains("successful") ? .green : AppTheme.accent).frame(width: 7, height: 7)
+                Circle().fill(patchMessage.localizedCaseInsensitiveContains("successful") ? AppTheme.accent : AppTheme.accent).frame(width: 7, height: 7)
                 Text(patchOperationBusy ? "PROCESSING PATCH…" : patchMessage)
                     .font(.system(size: 10, weight: .bold, design: .rounded))
                     .foregroundStyle(.white.opacity(0.72))
@@ -201,7 +201,7 @@ struct ContentView: View {
 
     private var developerCredits: some View {
         VStack(spacing: 10) {
-            Text("Developed by ATH REGEDIT")
+            Text("Developed by SPIDER CHEAT")
                 .font(.system(size: 11, weight: .bold, design: .rounded))
                 .foregroundStyle(.white.opacity(0.72))
                 .multilineTextAlignment(.center)
@@ -211,7 +211,7 @@ struct ContentView: View {
                 .foregroundStyle(AppTheme.secondaryAccent.opacity(0.85))
 
             HStack(spacing: 10) {
-                channelButton(title: "ATH REGEDIT", url: "https://t.me/ATH_IOS")
+                
             }
         }
         .frame(maxWidth: .infinity)
@@ -374,7 +374,7 @@ private struct PatchOptionCard: View {
                     Spacer()
                     Text(isEnabled ? "ON" : "OFF")
                         .font(.system(size: 11, weight: .black, design: .rounded))
-                        .foregroundStyle(isEnabled ? .green : .white.opacity(0.58))
+                        .foregroundStyle(isEnabled ? AppTheme.accent : .white.opacity(0.58))
                 }
                 Text(name)
                     .font(.system(size: 17, weight: .black, design: .rounded))
@@ -386,7 +386,7 @@ private struct PatchOptionCard: View {
                     .tracking(1.3)
                     .foregroundStyle(color)
                 HStack(spacing: 7) {
-                    Circle().fill(isEnabled ? Color.green : Color.white.opacity(0.25)).frame(width: 8, height: 8)
+                    Circle().fill(isEnabled ? AppTheme.accent : Color.white.opacity(0.25)).frame(width: 8, height: 8)
                     Text(isEnabled ? "PATCH ACTIVE" : "ACTIVATE PATCH")
                         .font(.system(size: 9, weight: .black, design: .rounded))
                         .tracking(0.8)

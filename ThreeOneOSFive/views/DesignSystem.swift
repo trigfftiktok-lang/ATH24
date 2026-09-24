@@ -1,12 +1,12 @@
 import SwiftUI
 
 enum AppTheme {
-    // Green, white and black palette shared by every primary screen.
-    static let accent = Color(red: 0.02, green: 0.72, blue: 0.28)
-    static let secondaryAccent = Color.white
+    // Monochrome black, white, and silver palette matched to the Spider logo.
+    static let accent = Color.white
+    static let secondaryAccent = Color(red: 0.72, green: 0.72, blue: 0.74)
     static let pageBackground = Color.black
-    static let consoleBackground = Color(red: 0.005, green: 0.035, blue: 0.014)
-    static let referenceCard = Color(red: 0.012, green: 0.16, blue: 0.045).opacity(0.78)
+    static let consoleBackground = Color(red: 0.018, green: 0.018, blue: 0.022)
+    static let referenceCard = Color(red: 0.10, green: 0.10, blue: 0.12).opacity(0.78)
     static let pageInset: CGFloat = 16
     static let rowIconSize: CGFloat = 17
     static let rowIconFrame: CGFloat = 28

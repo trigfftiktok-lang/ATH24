@@ -89,11 +89,11 @@ struct ContentView: View {
     private var header: some View {
         HStack {
             VStack(alignment: .leading, spacing: 3) {
-                Text(tab == .developer ? "ATH REGEDIT" : "ATH EXTERNAL")
+                Text(tab == .developer ? "SPIDER CHEAT" : "SPIDER CHEAT")
                     .font(.system(size: 25, weight: .black, design: .rounded))
                     .tracking(3)
                     .foregroundStyle(.white)
-                Text("PATCH CONTROL CENTER")
+                Text(tab == .normal ? "FF NORMAL PATCH CONTROL" : tab == .max ? "FF MAX PATCH CONTROL" : "SPIDER CHEAT")
                     .font(.system(size: 10, weight: .bold, design: .rounded))
                     .tracking(1.7)
                     .foregroundStyle(AppTheme.accent)
@@ -158,7 +158,7 @@ struct ContentView: View {
 
             HStack {
                 Circle()
-                    .fill(patchOperationBusy ? Color.orange : AppTheme.accent)
+                    .fill(patchOperationBusy ? AppTheme.secondaryAccent : AppTheme.accent)
                     .frame(width: 7, height: 7)
                 Text(patchMessage)
                     .font(.system(size: 10, weight: .bold, design: .rounded))
@@ -198,7 +198,7 @@ struct ContentView: View {
 
                 Text(enabled ? "ON" : "OFF")
                     .font(.system(size: 11, weight: .black, design: .rounded))
-                    .foregroundStyle(enabled ? .green : .white.opacity(0.55))
+                    .foregroundStyle(enabled ? AppTheme.accent : .white.opacity(0.55))
 
                 Toggle("", isOn: .constant(enabled))
                     .labelsHidden()
@@ -229,7 +229,7 @@ struct ContentView: View {
                             .font(.system(size: 11, weight: .bold, design: .rounded))
                             .tracking(1.3)
                             .foregroundStyle(AppTheme.accent)
-                        Text("ATH REGEDIT")
+                        Text("SPIDER CHEAT")
                             .font(.system(size: 23, weight: .black, design: .rounded))
                             .foregroundStyle(.white)
                     }
@@ -247,8 +247,6 @@ struct ContentView: View {
             .background(.black.opacity(0.48), in: RoundedRectangle(cornerRadius: 24))
             .overlay(RoundedRectangle(cornerRadius: 24).stroke(AppTheme.accent.opacity(0.42)))
 
-            channel("TELEGRAM", "@ATHREGEDIT", "https://t.me/ATHREGEDIT", true)
-            channel("TELEGRAM CHANNEL", "ATH_IOS", "https://t.me/ATH_IOS", false)
             device
             licenseValidity
         }
@@ -484,6 +482,14 @@ struct AnimatedHyperBackdrop: View {
         GeometryReader { proxy in
             ZStack {
                 AppTheme.pageBackground
+                Image("SpiderNetworkBackground")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: proxy.size.width, height: proxy.size.height)
+                    .clipped()
+                    .opacity(0.34)
+                    .overlay(Color.black.opacity(0.28))
+                    .allowsHitTesting(false)
                 Circle()
                     .fill(AppTheme.accent.opacity(0.12))
                     .frame(width: 280, height: 280)
